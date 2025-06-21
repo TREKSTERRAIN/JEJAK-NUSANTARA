@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makanan Nusantara</title>
+
+  <!-- Bootstrap icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Core theme CSS -->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <style>
+    /* Kotak biru dan warna teks putih */
+    .kotak-biru {
+      background-color: #5dc4f1;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .kotak-biru h2,
+    .kotak-biru h5,
+    .kotak-biru p {
+      color: white !important;
+    }
+
+    /* Sidebar daftar provinsi */
+    .sidebar {
+      position: fixed;
+      top: 75px;
+      left: 20px;
+      width: 180px;
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      color: #007BFF;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Biar konten tidak ketimpa sidebar */
+    main {
+      margin-left: 220px;
+    }
+  </style>
+</head>
+<body>
+  <header class="text-center py-5">
+    <h1 class="fw-bold" style="font-family: 'Newsreader', serif;">Makanan Khas Nusantara</h1>
+    <p class="lead" style="font-family: 'Mulish', sans-serif;">Temukan ragam kuliner khas dari setiap provinsi di Indonesia</p>
+  </header>
+
+  <nav class="sidebar">
+  <h5>Daftar Provinsi</h5>
+  <a href="#" data-slide-to="0">Sumatera Barat</a>
+  <a href="#" data-slide-to="1">Yogyakarta</a>
+  <a href="#" data-slide-to="2">Papua Selatan</a>
+  <a href="#" data-slide-to="3">Papua Barat Daya</a>
+  <a href="#" data-slide-to="4">Papua Pegunungan</a>
+  <a href="#" data-slide-to="5">Papua Tengah</a>
+  <a href="#" data-slide-to="6">Kalimantan Utara</a>
+  <a href="#" data-slide-to="7">Sulawesi Barat</a>
+  <a href="#" data-slide-to="8">Kepulauan Riau</a>
+  <a href="#" data-slide-to="9">Gorontalo</a>
+  <a href="#" data-slide-to="10">Kepulauan Bangka Belitung</a>
+  <a href="#" data-slide-to="11">Maluku Utara</a>
+  <a href="#" data-slide-to="12">Papua Barat</a>
+  <a href="#" data-slide-to="13">Bengkulu</a>
+  <a href="#" data-slide-to="14">Sulawesi Tengah</a>
+  <a href="#" data-slide-to="15">Sulawesi Utara</a>
+  <a href="#" data-slide-to="16">Sulawesi Tenggara</a>
+  <a href="#" data-slide-to="17">Lampung</a>
+  <a href="#" data-slide-to="18">Bali</a>
+  <a href="#" data-slide-to="19">Nusa Tenggara Timur</a>
+  <a href="#" data-slide-to="20">Nusa Tenggara Barat</a>
+  <a href="#" data-slide-to="21">Kalimantan Timur</a>
+  <a href="#" data-slide-to="22">Kalimantan Tengah</a>
+  <a href="#" data-slide-to="23">Jambi</a>
+  <a href="#" data-slide-to="24">Riau</a>
+  <a href="#" data-slide-to="25">Nanggroe Aceh Darussalam</a>
+  <a href="#" data-slide-to="26">Kalimantan Selatan</a>
+  <a href="#" data-slide-to="27">Jawa Tengah</a>
+  <a href="#" data-slide-to="28">Papua</a>
+  <a href="#" data-slide-to="29">Sumatera Utara</a>
+  <a href="#" data-slide-to="30">Sumatera Selatan</a>
+  <a href="#" data-slide-to="31">Jawa Barat</a>
+  <a href="#" data-slide-to="32">Jawa Timur</a>
+  <a href="#" data-slide-to="33">Maluku</a>
+  <a href="#" data-slide-to="34">Kalimantan Barat</a>
+  <a href="#" data-slide-to="35">Sulawesi Selatan</a>
+  <a href="#" data-slide-to="36">DKI Jakarta</a>
+</nav>
+
+  <main class="container my-5">
+    <div class="kotak-biru shadow-sm">
+      <h2 class="text-center mb-" style="font-family: 'Kanit', sans-serif;">Galeri Makanan Nusantara</h2>
+
+      <div id="carouselMakanan" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner text-center">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" id="sumbar">
+            <img src="assets/img/makanan/rendang.png" class="d-block mx-auto img-fluid rounded" alt="Rendang" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Rendang</h5>
+              <p class="text-muted">Sumatera Barat</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Masakan daging sapi dengan santan dan rempah-rempah yang dimasak hingga kuah mengering.
+              </p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" id="jogja">
+            <img src="assets/img/makanan/gudeg.png" class="d-block mx-auto img-fluid rounded" alt="Gudeg" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Gudeg</h5>
+              <p class="text-muted">Daerah Istimewa Yogyakarta</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Gudeg (bahasa Jawa: Gudhěg) adalah hidangan khas Daerah Istimewa Yogyakarta dan Jawa Tengah, yang terbuat dari nangka muda (gori) yang dimasak dengan santan. Pembuatan gudeg memerlukan waktu hingga berjam-jam. Warna cokelat dari gudeg biasanya dihasilkan oleh daun jati yang dimasak secar bersamaan. Biasanya, gudeg dimakan dengan nasi dan disajikan dengan kuah santan kental (areh), ayam kampung, telur, tempe, tahu, dan sambal goreng krecek.
+              </p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" id="papua">
+            <img src="assets/img/makanan/papeda.png" class="d-block mx-auto img-fluid rounded" alt="Papeda" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Papeda</h5>
+              <p class="text-muted">Papua Selatan</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Papeda merupakan olahan dari sagu murni. Bubur sagu ini memiliki tekstur dan warna yang khas yaitu berwarna putih bening dan lengket seperti lem. Memiliki banyak manfaat bagi kesehatan yaitu untuk meningkatkan kekebalan tubuh, mengurangi risiko kanker, obesitas, dan sebagainya.
+              </p>
+            </div>
+          </div>
+        <!-- Slide 4 -->
+          <div class="carousel-item" id="papua bd">
+            <img src="assets/img/makanan/ulat sagu.png" class="d-block mx-auto img-fluid rounded" alt="Papeda" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Sate Ulat Sagu</h5>
+              <p class="text-muted">Papua Barat Daya</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Sate ulat sagu terbuat dari ulat sagu, yaitu larva yang hidup di dalam batang pohon sagu yang membusuk. Ulat ini memiliki tekstur lembut dan rasa gurih, sering dianggap sebagai sumber protein alami yang tinggi. Setelah dibersihkan, ulat sagu biasanya ditusuk seperti sate lalu dibakar di atas bara api hingga matang
+              </p>
+            </div>
+          </div>
+
+        <!--Slide 5-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/udang selingkuh.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Udang Selingkuh</h5>
+              <p class="text-muted">Papua Pegunungan</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Udang selingkuh adalah salah satu hidangan favorit yang populer di kalangan masyarakat Papua Pegunungan. Nama unik ini diberikan karena udang tersebut memiliki capit besar menyerupai kepiting. Menurut cerita lokal, bentuk tubuh yang tak biasa ini merupakan hasil "perselingkuhan" antara udang dan kepiting. Dari segi rasa, udang selingkuh memiliki cita rasa yang lebih manis dibanding udang biasa. Teksturnya juga lebih lembut, namun tetap kenyal dan berserat seperti lobster. Hewan ini hidup di perairan tawar.
+                </p>
+            </div>
+          </div>
+
+
+          <!--Slide 6-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/papedaa.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Papeda</h5>
+              <p class="text-muted">Papua Tengah</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Makanan satu ini dibuat dari tepung sagu yang dimasak menyerupai bubur. Biasanya, papeda disajikan bersama ikan kuah kuning dengan rasa asam dan segar yang menggugah selera.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 7-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/kepiting soka.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Kepiting Soka</h5>
+              <p class="text-muted">Kalimanta Utara</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Kepiting soka adalah kepiting kecil bertempurung lunak, digoreng kering atau dibumbui saus pedas-manis.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 8-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/jepa.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Jepa</h5>
+              <p class="text-muted">Sulawesi Barat</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Jepa terbuat dari singkong (ubi kayu) yang diparut, diperas, lalu dimasak menjadi lembaran pipih mirip roti atau pancake. Biasanya jepa disajikan sebagai makanan pokok pengganti nasi dan disantap bersama lauk seperti ikan asin atau sayur.
+                </p>
+            </div>
+          </div>
+        
+          <!--Slide 9-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/otak-otak.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Otak-otak Batam </h5>
+              <p class="text-muted">Kepulauan Riau</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Makanan berbahan dasar ikan yang dibungkus daun kelapa dan dibakar, menunjukkan adaptasi kuliner maritim dengan teknik pengolahan tradisional yang mempertahankan kelembaban dan aroma.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 10-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/binte.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Binte Biluhuta</h5>
+              <p class="text-muted">Gorontalo</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Makanan ini berbahan dasar jagung manis muda yang dipipil dan disajikan dengan cara disiram dengan kuah. Kuah tersebut biasanya dibuat dari campuran udang atau ikan cakalang suwir, kelapa parut, daun kemangi, dan bumbu-bumbu lainnya. 
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 11-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/jepa.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Lempah Kuning</h5>
+              <p class="text-muted">Kepulauan Bangka Belitung</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Lempah kuning adalah Sup ikan dengan kuah kunyit dan santan, dipadukan dengan nanas dan belimbing wuluh untuk rasa asam segar.
+                </p>
+            </div>
+          </div>
+
+           <!--Slide 12-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/sate bandeng.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Sate Bandeng</h5>
+              <p class="text-muted">Banten</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Sate bandeng adalah Daging ikan bandeng yang dihaluskan, dibumbui, lalu dibakar di dalam kulit ikan aslinya, menghasilkan tekstur lembut dan gurih.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 13-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/jepa.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Jepa</h5>
+              <p class="text-muted">Sulawesi Barat</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                s
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 14-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/makanan/jepa.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Jepa</h5>
+              <p class="text-muted">Sulawesi Barat</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                s
+                </p>
+            </div>
+          </div>
+
+        <!-- Tombol Navigasi -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMakanan" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+          <span class="visually-hidden">Sebelumnya</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselMakanan" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+          <span class="visually-hidden">Berikutnya</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-light">
+    <p class="mb-0">&copy; 2025 Website Makanan Nusantara</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.sidebar a').forEach((link) => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const index = parseInt(this.getAttribute('data-slide-to'));
+      const carousel = document.querySelector('#carouselMakanan');
+      const carouselInstance = bootstrap.Carousel.getOrCreateInstance(carousel);
+      carouselInstance.to(index);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makanan Nusantara</title>
+
+  <!-- Bootstrap icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Core theme CSS -->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <style>
+    /* Kotak biru dan warna teks putih */
+    .kotak-biru {
+      background-color: #5dc4f1;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .kotak-biru h2,
+    .kotak-biru h5,
+    .kotak-biru p {
+      color: white !important;
+    }
+
+    /* Biar konten tidak ketimpa sidebar */
+    main {
+      margin-left: 220px;
+    }
+
+    /* Sidebar (daftar provinsi) styling */
+    .sidebar {
+      background: #5dc4f1;
+      border-radius: 12px;
+      max-height: 600px; /* Maksimal tinggi sebelum scroll */
+      overflow-y: auto;
+    }
+
+    .sidebar h5 {
+      font-family: 'Kanit', sans-serif;
+      font-weight: 1600;
+      margin-bottom: 15px;
+      color: white;
+      font-style: bold;
+    }
+
+    .province-scroll {    
+  font-family: 'Mulish', sans-serif;
+    }
+    
+    .province-scroll a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+    }
+
+    .province-scroll a:hover {
+      color: #052241;
+    }
+
+    /* Responsif tambahan */
+    @media (max-width: 768px) {
+      .sidebar {
+        max-height: none;
+      }
+    }
+
+    /* Styling umum */
+    .kotak-biru {
+      background: #9f1ae2;
+      border-radius: 22px;
+    }
+
+    /* Scrollbar styling opsional */
+    .sidebar::-webkit-scrollbar {
+      width: 10px;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background-color: #9f1ae2;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+
+
+<body style="padding-top: 90px;"> 
+  <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold" href="index.html">Jejak Nusantara</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="food.html">Makanan</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="baju adat.html">Baju Adat</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="peta.html">Peta</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="kuis.html">Permainan</a></li>
+                    </ul>
+                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                        <span class="d-flex align-items-center">
+                            <i class="bi-chat-text-fill me-2"></i>
+                            <span class="small">Send Feedback</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+  <header class="text-center py-1">
+    <h1 class="fw-bold" style="font-family: 'Newsreader', serif;">Kuis Pengetahuan Ragam Nusantara</h1>
+    <p class="lead" style="font-family: 'Mulish', sans-serif;">Asah pengetahuanmu dengan ikuti kuis pengetahuan!</p>
+  </header>
+  
+  <body>
+    <style>
+  .fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .btn-opsi:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+  }
+
+  .gambar-kuis {
+    max-width: 300px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+
+  .btn-skor {
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: white;
+    color: #5dc4f1;
+    font-weight: bold;
+  }
+
+  #feedback {
+    transition: all 0.4s;
+  }
+</style>
+
+<div class="container text-center my-5">
+  <div id="kuis-container" class="kotak-biru fade-in">
+    <h2 class="mb-3">Kuis Ragam Nusantara</h2>
+
+    <!-- Bagian mulai -->
+    <div id="mulai-section">
+      <p>Tekan tombol di bawah ini untuk memulai kuis!</p>
+      <button class="btn btn-light fw-bold" id="mulai-btn">Mulai Kuis</button>
+        <div class="d-flex justify-content-center gap-4 mb-4">
+                <img src="assets/img/beranda/kuis.png" 
+                 alt="Kuliner Indonesia 1" 
+                    class="img-fluid rounded-circle goyang" 
+                 style="height: 200px;">
+                </div>
+      
+    </div>
+
+    <!-- Bagian pertanyaan -->
+    <div id="pertanyaan-section" style="display: none;">
+      <img id="gambar-kuis" class="gambar-kuis" src="" alt="Gambar Pertanyaan">
+      <p id="pertanyaan-teks" class="fs-5 fade-in"></p>
+      <div class="d-flex justify-content-center gap-3 mt-3 fade-in">
+        <button id="opsi1" class="btn btn-outline-light btn-opsi px-4"></button>
+        <button id="opsi2" class="btn btn-outline-light btn-opsi px-4"></button>
+      </div>
+      <p id="feedback" class="mt-3 fw-bold fade-in"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const kuis = [
+    {
+      pertanyaan: "Papeda berasal dari daerah mana?",
+      pilihan: ["Papua", "Sumatera"],
+      gambar: "assets/img/kuis/papedaa.png",
+      benar: 0
+    },
+    {
+      pertanyaan: "Apa nama ibu kota Indonesia?",
+      pilihan: ["Sulawesi", "DKI Jakarta"],
+      gambar: "assets/img/kuis/monas.png",
+      benar: 1
+    },
+    {
+      pertanyaan: "Ulos adalah kain tradisional dari daerah mana?",
+      pilihan: ["Kalimantan", "Jawa Tengah"],
+      gambar: "assets/img/kuis/ulos.png",
+      benar: 0
+    },
+    {
+      pertanyaan: "Bendera Indonesia terdiri dari warna apa saja?",
+      pilihan: ["Merah dan Ungu", "Merah dan Putih"],
+      gambar: "assets/img/kuis/bendera.jpg",
+      benar: 1
+    },
+    {
+      pertanyaan: "Lagu Apuse berasal dari daerah mana?",
+      pilihan: ["Papua", "Aceh"],
+      gambar: "assets/img/kuis/lagu apuse.jpg",
+      benar: 0
+    },
+    {
+      pertanyaan: "Apa bahasa resmi negara Indonesia?",
+      pilihan: ["Bahasa Jawa", "Bahasa Indonesia"],
+      gambar: "assets/img/kuis/bhs indo.jpg",
+      benar: 1
+    },
+    {
+      pertanyaan: "Monumen Nasional (Monas) berada di kota mana?",
+      pilihan: ["Semarang", "Jakarta"],
+      gambar: "assets/img/kuis/monas.png",
+      benar: 1
+    },
+    {
+      pertanyaan: "Rendang merupakan makanan khas dari daerah mana?",
+      pilihan: ["Jambi", "Sumatera Barat"],
+      gambar: "assets/img/kuis/rendang.png",
+      benar: 1
+    },
+    {
+      pertanyaan: "Baju Bodo merupakan pakaian adat dari daerah mana?",
+      pilihan: ["Sulawesi Selatan", "Kalmantan Barat"],
+      gambar: "assets/img/kuis/baju bodo.png",
+      benar: 1
+    },
+    {
+      pertanyaan: "Jembatan Suramadu menghubungkan pulau mana?",
+      pilihan: ["Surabaya dan Madura", "Jakarta dan Lampung"],
+      gambar: "assets/img/kuis/suramadu.jpg",
+      benar: 0
+    }
+  ];
+
+  let indexSoal = 0;
+  let skor = 0;
+
+  const mulaiSection = document.getElementById("mulai-section");
+  const pertanyaanSection = document.getElementById("pertanyaan-section");
+  const gambarKuis = document.getElementById("gambar-kuis");
+  const pertanyaanTeks = document.getElementById("pertanyaan-teks");
+  const opsi1 = document.getElementById("opsi1");
+  const opsi2 = document.getElementById("opsi2");
+  const feedback = document.getElementById("feedback");
+  const mulaiBtn = document.getElementById("mulai-btn");
+
+  mulaiBtn.addEventListener("click", mulaiKuis);
+
+  function mulaiKuis() {
+    indexSoal = 0;
+    skor = 0;
+    mulaiSection.style.display = "none";
+    pertanyaanSection.style.display = "block";
+    tampilkanSoal();
+  }
+
+  function tampilkanSoal() {
+    const soal = kuis[indexSoal];
+    pertanyaanTeks.textContent = soal.pertanyaan;
+    opsi1.textContent = soal.pilihan[0];
+    opsi2.textContent = soal.pilihan[1];
+    gambarKuis.src = soal.gambar;
+    feedback.textContent = "";
+  }
+
+  opsi1.addEventListener("click", () => jawab(0));
+  opsi2.addEventListener("click", () => jawab(1));
+
+  function jawab(pilihanIndex) {
+    const soal = kuis[indexSoal];
+    if (pilihanIndex === soal.benar) {
+      feedback.textContent = "Jawaban benar! 🎉";
+      feedback.style.color = "lightgreen";
+      skor++;
+    } else {
+      feedback.textContent = "Jawaban salah. 😅";
+      feedback.style.color = "yellow";
+    }
+
+    setTimeout(() => {
+      indexSoal++;
+      if (indexSoal < kuis.length) {
+        tampilkanSoal();
+      } else {
+        tampilkanSkorAkhir();
+      }
+    }, 1000);
+  }
+
+  function tampilkanSkorAkhir() {
+  pertanyaanSection.innerHTML = `
+    <p class="fs-4 fade-in">Kuis selesai! Skor kamu: <strong>${skor} dari ${kuis.length}</strong> 🎯</p>
+    <button class="btn btn-skor rounded-pill fade-in" onclick="location.reload()">Main Lagi</button>
+  `;
+}
+
+</script>
+
+
+  </body>
+  <footer class="text-center py-4 bg-light">
+    <p class="mb-0">&copy; Jejak Nusantara 2025</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.sidebar a').forEach((link) => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const index = parseInt(this.getAttribute('data-slide-to'));
+      const carousel = document.querySelector('#carouselMakanan');
+      const carouselInstance = bootstrap.Carousel.getOrCreateInstance(carousel);
+      carouselInstance.to(index);
+    });
+  });
+</script>
+
+</body>
+</html>

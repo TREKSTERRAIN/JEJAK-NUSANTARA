@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baju Adat Nusantara</title>
+
+  <!-- Bootstrap icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Core theme CSS -->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <style>
+    /* Kotak biru dan warna teks putih */
+    .kotak-biru {
+      background-color: #5dc4f1;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .kotak-biru h2,
+    .kotak-biru h5,
+    .kotak-biru p {
+      color: white !important;
+    }
+
+    /* Biar konten tidak ketimpa sidebar */
+    main {
+      margin-left: 220px;
+    }
+
+    /* Sidebar (daftar provinsi) styling */
+    .sidebar {
+      background: #5dc4f1;
+      border-radius: 12px;
+      max-height: 600px; /* Maksimal tinggi sebelum scroll */
+      overflow-y: auto;
+    }
+
+    .sidebar h5 {
+      font-family: 'Kanit', sans-serif;
+      font-weight: 1600;
+      margin-bottom: 15px;
+      color: white;
+      font-style: bold;
+    }
+
+    .province-scroll {    
+  font-family: 'Mulish', sans-serif;
+    }
+    
+    .province-scroll a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+    }
+
+    .province-scroll a:hover {
+      color: #052241;
+    }
+
+    /* Responsif tambahan */
+    @media (max-width: 768px) {
+      .sidebar {
+        max-height: none;
+      }
+    }
+
+    /* Styling umum */
+    .kotak-biru {
+      background: #9f1ae2;
+      border-radius: 22px;
+    }
+
+    /* Scrollbar styling opsional */
+    .sidebar::-webkit-scrollbar {
+      width: 10px;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background-color: #9f1ae2;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+
+<body style="padding-top: 90px;">
+  <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold" href="index.html">Jejak Nusantara</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="food.html">Makanan</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="baju adat.html">Baju Adat</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="peta.html">Peta</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="kuis.html">Permainan</a></li>
+                    </ul>
+                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                        <span class="d-flex align-items-center">
+                            <i class="bi-chat-text-fill me-2"></i>
+                            <span class="small">Send Feedback</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+  <header class="text-center py-1">
+    <h1 class="fw-bold" style="font-family: 'Newsreader', serif;">Baju Adat Khas Nusantara</h1>
+    <p class="lead" style="font-family: 'Mulish', sans-serif;">Temukan keragaman baju adat tradisional dari setiap provinsi di Indonesia</p>
+  </header>
+
+<main class="container-fluid my-1">
+  <div class="row d-flex flex-wrap">
+    <!-- Sidebar: Daftar Provinsi -->
+    <aside class="col-md-3 col-12 mb-4">
+      <nav class="sidebar p-3 shadow-sm">
+        <h5>Daftar Provinsi</h5>
+        <div class="province-scroll">
+          <a href="#" data-slide-to="0">Sumatera Barat</a><br>
+          <a href="#" data-slide-to="1">Yogyakarta</a><br>
+          <a href="#" data-slide-to="2">Papua Selatan</a><br>
+          <a href="#" data-slide-to="3">Papua Barat Daya</a><br>
+          <a href="#" data-slide-to="4">Papua Pegunungan</a><br>
+          <a href="#" data-slide-to="5">Papua Tengah</a><br>
+          <a href="#" data-slide-to="6">Kalimantan Utara</a><br>
+          <a href="#" data-slide-to="7">Sulawesi Barat</a><br>
+          <a href="#" data-slide-to="8">Kepulauan Riau</a><br>
+          <a href="#" data-slide-to="9">Gorontalo</a><br>
+          <a href="#" data-slide-to="10">Kepulauan Bangka Belitung</a><br>
+          <a href="#" data-slide-to="11">Banten</a><br>
+          <a href="#" data-slide-to="12">Maluku Utara</a><br>
+          <a href="#" data-slide-to="13">Papua Barat</a><br>
+          <a href="#" data-slide-to="14">Bengkulu</a><br>
+          <a href="#" data-slide-to="15">Sulawesi Tengah</a><br>
+          <a href="#" data-slide-to="16">Sulawesi Utara</a><br>
+          <a href="#" data-slide-to="17">Sulawesi Tenggara</a><br>
+          <a href="#" data-slide-to="18">Lampung</a><br>
+          <a href="#" data-slide-to="19">Bali</a><br>
+          <a href="#" data-slide-to="20">Nusa Tenggara Timur</a><br>
+          <a href="#" data-slide-to="21">Nusa Tenggara Barat</a><br>
+          <a href="#" data-slide-to="22">Kalimantan Timur</a><br>
+          <a href="#" data-slide-to="23">Kalimantan Tengah</a><br>
+          <a href="#" data-slide-to="24">Jambi</a><br>
+          <a href="#" data-slide-to="25">Riau</a><br>
+          <a href="#" data-slide-to="26">Nanggroe Aceh Darussalam</a><br>
+          <a href="#" data-slide-to="27">Kalimantan Selatan</a><br>
+          <a href="#" data-slide-to="28">Jawa Tengah</a><br>
+          <a href="#" data-slide-to="29">Papua</a><br>
+          <a href="#" data-slide-to="30">Sumatera Utara</a><br>
+          <a href="#" data-slide-to="31">Sumatera Selatan</a><br>
+          <a href="#" data-slide-to="32">Jawa Barat</a><br>
+          <a href="#" data-slide-to="33">Jawa Timur</a><br>
+          <a href="#" data-slide-to="34">Maluku</a><br>
+          <a href="#" data-slide-to="35">Kalimantan Barat</a><br>
+          <a href="#" data-slide-to="36">Sulawesi Selatan</a><br>
+          <a href="#" data-slide-to="37">DKI Jakarta</a><br>
+
+          <!-- Tambahkan provinsi lain di sini -->
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Konten: Galeri Makanan -->
+    <section class="col-md-9 col-12">
+      <div class="kotak-biru p-4 shadow-sm">
+        <h2 class="text-center mb-4" style="font-family: 'Kanit', sans-serif;">Galeri Baju Adat Nusantara</h2>
+        <div id="carouselMakanan" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner text-center">
+            <!-- Slide 1 -->
+            <div class="carousel-item active" id="sumbar">
+              <img src="assets/img/baju adat/bundo kanduang.png" class="d-block mx-auto img-fluid rounded" alt="Rendang" style="max-height: 400px;">
+              <div class="mt-3">
+                <h5 class="fw-bold">Bundo Kanduang</h5>
+                <p class="text-muted">Sumatera Barat</p>
+                <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                  Dari segi aksesoris yang digunakan memiliki nilai filosofi yang erat kaitannya dengan seorang ibu dan keluarga. Sehingga tidak heran jika nama pakaian adatnya adalah Padang Bundo Kanduang yang berarti ibu dari raja-raja. Salah satu keunikan dari baju asli Sumatera Barat ini yaitu pada bagian penutup kepalanya yang hampir menyerupai dua tanduk.
+                </p>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+          <div class="carousel-item" id="jogja">
+            <img src="assets/img/baju adat/kebaya jogja.png" class="d-block mx-auto img-fluid rounded" alt="Gudeg" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Kebaya Kesatrian</h5>
+              <p class="text-muted">Daerah Istimewa Yogyakarta</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Kebaya Kesatrian/Pakaian Kesatrian Ageng terdiri dari surjan sebagai atasan, celana panjang hitam, kain batik yang dilitkan pada pinggang dengan panjang diatas lutut, serta hiasan kepala. Surjan Kesatrian Ageng dibuat dari kain laken (hampir serupa kain beludru) berwarna hitam polos yang kemudian dihiasi oleh bordiran keemasan bermotif daun keluwih dan sulur. Daun keluwih melambangkan perlindungan serta keselamatan keraton dan sulur melambangkan kehidupan yang terus-menerus tumbuh.
+              </p>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item" id="papua">
+            <img src="assets/img/baju adat/pummi.png" class="d-block mx-auto img-fluid rounded" alt="Papeda" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Pummi</h5>
+              <p class="text-muted">Papua Selatan</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Pakaian ini terbuat dari bahan-bahan alami. Untuk pria, pakaian adat ini berupa koteka, yaitu penutup kemaluan yang terbuat dari labu kering, sementara wanita memakai rok rumbai dari serat alami seperti daun atau rumput kering yang diikat pada pinggang. Pummi mencerminkan kehidupan masyarakat yang dekat dengan alam, serta menggambarkan nilai-nilai kesederhanaan, identitas, dan kearifan lokal yang dijaga turun-temurun.
+              </p>
+            </div>
+          </div>
+        <!-- Slide 4 -->
+          <div class="carousel-item" id="papua bd">
+            <img src="assets/img/baju adat/boe.png" class="d-block mx-auto img-fluid rounded" alt="Papeda" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Boe, Kuli Bia, Topi Kasuari, dan Kalung Manik-Manik</h5>
+              <p class="text-muted">Papua Barat Daya</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Boe adalah penutup tubuh bagian bawah yang terbuat dari serat alami seperti daun sagu atau kulit kayu, biasanya dikenakan oleh pria. Kuli Bia merupakan penutup dada tradisional bagi wanita, juga terbuat dari bahan alam seperti daun atau serat pohon. Topi Kasuari adalah hiasan kepala yang dihiasi bulu burung kasuari, melambangkan keberanian dan status sosial. Sementara Kalung Manik-Manik berfungsi sebagai perhiasan dan simbol identitas, sering dibuat dengan pola warna yang memiliki makna khusus dalam tradisi setempat.
+              </p>
+            </div>
+          </div>
+
+        <!--Slide 5-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/holim.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Holim</h5>
+              <p class="text-muted">Papua Pegunungan</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Holim merujuk pada koteka, yaitu penutup kemaluan yang terbuat dari labu air yang dikeringkan dan dibentuk memanjang. Penggunaan koteka ini tidak hanya berfungsi sebagai pakaian, tetapi juga mencerminkan status sosial, usia, dan asal seseorang dalam masyarakat adat. Selain itu, masyarakat biasanya menghiasi tubuh dengan lukisan tubuh, hiasan kepala dari bulu burung, dan perhiasan lain dari bahan alam, menambah makna budaya dari busana Holim.
+                </p>
+            </div>
+          </div>
+
+
+          <!--Slide 6-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/holimm.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Holim</h5>
+              <p class="text-muted">Papua Tengah</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Holim merujuk pada koteka, yaitu penutup kemaluan yang terbuat dari labu air yang dikeringkan dan dibentuk memanjang. Penggunaan koteka ini tidak hanya berfungsi sebagai pakaian, tetapi juga mencerminkan status sosial, usia, dan asal seseorang dalam masyarakat adat. Selain itu, masyarakat biasanya menghiasi tubuh dengan lukisan tubuh, hiasan kepala dari bulu burung, dan perhiasan lain dari bahan alam, menambah makna budaya dari busana Holim. 
+                Pakaian Yokal terbuat dari kulit pohon yang berwarna mencolok coklat tanah atau kemerahan. Pakaian ini dibuat dengan cara dianyam dan dililitkan memutari tubuh wanita.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 7-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/taa.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Ta'a dan Sapei Sapaq</h5>
+              <p class="text-muted">Kalimanta Utara</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Ta'a adalah pakaian adat wanita yang terdiri dari atasan berhias manik-manik dan rok tenun khas dengan motif etnik, dilengkapi aksesoris seperti kalung, ikat kepala, dan gelang. Sementara Sapei Sapaq adalah pakaian adat pria yang terdiri dari rompi tanpa lengan, cawat (sejenis kain penutup bagian bawah), serta hiasan kepala dan perisai, sering dipakai dalam upacara adat atau tari perang. Keduanya mencerminkan identitas budaya, keberanian, dan keindahan seni tradisional Dayak.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 8-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/towaine.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Pattuqduq Towaine</h5>
+              <p class="text-muted">Sulawesi Barat</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Suku bangsa yang paling mendominasi etnisitas penduduk Sulawesi Barat adalah Suku Mandar. 50% dari total jumlah penduduknya memang berasal dari Suku Mandar. Oleh karena itu, tak heran bila baju adat dari Suku Mandar merupakan salah satu baju tradisional daerah Sulawesi Barat.
+                </p>
+            </div>
+          </div>
+        
+          <!--Slide 9-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/kebaya laboh.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Kebaya Laboh</h5>
+              <p class="text-muted">Kepulauan Riau</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Ciri khasnya adalah potongan panjang (labuh) hingga di bawah pinggul atau mendekati lutut, dengan model yang longgar dan sederhana. Kebaya ini biasanya dipadukan dengan kain songket atau batik dan sering digunakan dalam acara adat atau resmi.
+            </div>
+          </div>
+
+          <!--Slide 10-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/makuta.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Makuta dan Biliu</h5>
+              <p class="text-muted">Gorontalo</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Pakaian adat Makuta dan Biliu merupakan sepasang pakaian adat Gorontalo yang pada dasarnya hanya dipakai ketika ada upacara pernikahan. Makuta sendiri lebih biasanya hanya dipakai oleh seorang mempelai pria sedangkan untuk Biliu hanya dipakai oleh mempelai wanita.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 11-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/Paksiann.jpg" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Paksian</h5>
+              <p class="text-muted">Kepulauan Bangka Belitung</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Pakisan adat dari Bangka Belitung dipengaruhi oleh bentuk pakaian tionghoa. Untuk wanita menggunakan baju seting seperti baju kurung yang dibuat dari bahan sutra atau beledu dengan bawahan kain songket atau kain cual. Untuk pria menggunakan jubah sepanjang lutut dengan menggunakan celana berwarna sama.
+                </p>
+            </div>
+          </div>
+
+           <!--Slide 12-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/pangsi.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Pangsi</h5>
+              <p class="text-muted">Banten</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Pangsi memiliki tiga makna, yaitu:</p>
+<p class="text-muted" style="max-width: 15cm; margin: 0 auto;">-Tangtung :Merupakan singkatan dari "Tangtungan Ki Sunda Nyuwu Kana Suja yang berarti mempunyai pendirian yang teguh dan kuat.</p>
+
+<p class="text-muted" style="max-width: 15cm; margin: 0 auto;">-Nangtung
+Merupakan singkatan dari "Nangtung. Jejeg. Ajeg dina Gaiur. Teu Unggut Kalinduan, Teu Gedag Kaanginan yang berarti teguh dan kuat pendirian dalam aturan dan keyakinan, memiliki semangat tinggi dan tidak mudah goyah.
+</p>
+<p class="text-muted" style="max-width: 15cm; margin: 0 auto;">-Samping
+Mengandung arti "Depe Depe Handap Asor yang berarti selalu rendah hati dan tidak sombong.</p>
+
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 13-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/manteren.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Manteren Lamo & Kimun Gia</h5>
+              <p class="text-muted">Maluku Utara</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+               Manteren Lamo dulunya dipakai oleh para sultan dari kerajaan di Maluku Utara. Pakaian ini identik dengan jas berwarna cerah dan disertai 9 buah kancing besar yang terbuat dari perak.
+Sedangkan, Kimun Gia biasanya digunakan oleh permaisuri. Pakaian ini terdiri dari kebaya yang juga berwarna cerah, seperti merah, merah muda, atau putih, berbahan satin dengan bawahan berupa kain songket. Biasanya, Kimun Gia juga dilengkapi dengan aksesoris ikat pinggang berwarna emas.
+
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 14-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/ewer.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Ewer</h5>
+              <p class="text-muted">Papua Barat</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Pakaian ini terbuat dari jerami yang telah dikeringkan. Saat ini, Ewer dilengkapi dengan baju kain untuk atasannya seiring dengan adanya perkembangan zaman. Jerami kering biasanya hanya digunakan untuk rok wanita. Bagi wanita, atasan yang digunakan adalah baju kurung yang terbuat dari bahan kain beludru, kemudian dilengkapi dengan aksesoris-aksesoris seperti gelang, kalung, dan penutup kepala.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 15-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/rejang lebong.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Baju Rejang Lebong</h5>
+              <p class="text-muted">Bengkulu</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+               Baju Rejang Lebong memiliki campuran budaya dari Melayu Jambi, Riau, Deli, palembang, dan Lampung. Sehingga pakaian adat Bengkulu memiliki keunikan dan ciri khas. Pakaian ini biasanya digunakan untuk busana pengantin dalam pernikahan, maupun sebagai busana tari tradisional untuk festival dan penyambutan acara khusus.
+
+Untuk pakaian pengantin pada pria, bedanya hanya pada baju atau jas tertutup bertabur hiasan seperti lempengan koin. Selain itu juga mengenakan gelang, kalung sribulan, dan kalung emping.
+
+                </p>
+            </div>
+          </div>
+          <!--Slide 15-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/nggembe.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Nggembe</h5>
+              <p class="text-muted">Sulawesi Tengah</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Nggembe adalah pakaian adat khas perempuan Suku Kaili di Sulawesi Tengah. Pakaian ini memiliki bentuk segi empat yang berkerah bulat, dengan blus longgar hingga pinggang dan lengan tidak terlalu panjang. Biasanya, Nggembe dikenakan pada acara adat dan khusus suku Kaili.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 17-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/tepu.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Laku Tepu</h5>
+              <p class="text-muted">Sulawesi Utara</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Laku Tepu dimaksudkan sebagai baju yang memiliki bagian leher yang agak sempit atau tidak terbuka. Baju ini biasanya dipakai saat upacara adat Tulude. Upacara yang dilakukan setiap tahun ini merupakan warisan nenek moyang yang Laku Tepu untuk pria dan wanita tidak terlalu berbeda jauh. Keduanya berupa baju terusan panjang dengan lengan panjang, yang melambangkan keagungan masyarakat Sangihe Talaud. Baju ini terbuat dari bahan kain kofo atau fami manila, yaitu kain khas penduduk lokal yang menggunakan campuran bahan serat pisang abaka (manila hennep) dan serat kulit kayu. Kedua jenis serat yang telah dihaluskan kemudian ditenun menggunakan alat yang disebut kahuwang.dilaksanakan turun-temurun.
+
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 18-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/kinawo.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Kinawo, Babu Nggawi</h5>
+              <p class="text-muted">Sulawesi Tenggara</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Pakaian ini merupakan pakaian adat tradisional suku Tolaki yang terbuat dari kulit kayu, sementara Babu Nggawi merupakan pakaian wanita yang mencerminkan kesederhanaan dan keanggunan.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 19-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/tulang bawang.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Tulang Bawang</h5>
+              <p class="text-muted">Lampung</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Nama Tulang Bawang sendiri diambil dari nama sebuah kerajaan yang dulunya sangat terkenal di Lampung. Sekilas jika dilihat dari bentuknya hampir sama dengan baju khas Pulau Sumatera. Baju dari Lampung ini juga memiliki beragam pernak-pernik yang begitu indah. Umumnya aksesoris yang digunakan mempercantik pakaian adat tersebut terbuat dari bahan kain tapis.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 20-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/payas agung.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Payas Agung</h5>
+              <p class="text-muted">Bali</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Busana Payas Agung merupakan salah satu warisan budaya Bali yang sarat nilai historis, estetis, dan simbolis, khususnya di wilayah Buleleng. Payas Agung Ningrat Buleleng, yang dikenakan dalam prosesi pernikahan adat oleh kalangan bangsawan di Puri Kanginan Singaraja, mencerminkan hasil dari proses akulturasi antara budaya lokal Buleleng dengan berbagai budaya luar seperti Karangasem, Palembang, Padang, Tiongkok, dan Belanda. Pengaruh-pengaruh ini terlihat dari beragam elemen busana, seperti penggunaan kain songket Beratan, kain pelangi, sutera Tiongkok, serta bentuk-bentuk aksesori khas seperti Taka Mas Mirah dan Bunga Empak-Empak.
+                </p>
+            </div>
+          </div>
+          <!--Slide 21-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/tenun ikat.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Tenun Ikat</h5>
+              <p class="text-muted">Nusa Tenggara Timur</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Suku Rote memiliki pakaian adat yang disebut tenun ikat. Pakaian ini mempunyai model yang unik serta sejarah dan nilai filosofis yang tinggi. Karena itu, pakaian adat suku Rote digunakan sebagai ikon daerah Nusa Tenggara Timur.
+Keunikan dan ciri khas pakaian adat suku Rote terdapat pada  penutup kepala atau topi yang disebut Ti’i Langga. Ti’i Langga ini bentuknya mirip seperti topi Sombrero yang dipakai oleh masyarakat Meksiko.
+
+            </div>
+          </div>
+          <!--Slide 22-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/lambung.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Lambung</h5>
+              <p class="text-muted">Nusa Tenggara Barat</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Kebaya yang terbuat dari tenun disebut dengan Lambung. Pakaian adat di NTB yang wajib diketahui ialah jenis kebaya sepanjang pinggang dengan lengan pendek longgar. Yang bikin pakaian ini khas, warna dasarnya hitam dengan kerah berpotongan ‘V’.
+Untuk bawahan pakaian adat Lambung mengenakan sarung. Mayoritas motifnya bergambar flora. Sabuk Anteng dipakai untuk mengikat sarung. Nah, aksesoris berupa anting bentuknya bulat. Dibuat dari daun lontar dengan sepuhan perak. Pakaian adat Lambung dari suku Sasak lengkap dengan gelang tangan dan kaki
+
+                </p>
+            </div>
+          </div>
+          <!--Slide 23-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/sapei.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Ta’a dan Sapei Sapaq</h5>
+              <p class="text-muted">Kalimantan Timur</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Ta'a adalah sebutan untuk baju adat untuk para wanita. Sementara Sapei Sapaq adalah baju adat untuk kaum laki-laki. Model baju adat ini hampir sama dengan pakaian adat dayak lainnya. Terbuat dari kain beludru berwarna hitam dengan ornamen manik-manik yang bermotif khusus.
+                </p>
+            </div>
+          </div>
+          <!--Slide 24-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/sangkarut.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Sangkarut</h5>
+              <p class="text-muted">Kalimantan Tengah</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Baju Sangkarut atau dikenal juga Baju Basulau merupakan pakaian rompi yang dilapisi oleh Sulau (kerang). Sangka artinya pembatas, yang memiliki filosofi baju ini bisa membatasi dan menangkal setiap gangguan para roh halus yang akan datang pada pemakainya. Selain itu, baju ini dipercaya bisa melindungi pemakainya dari pengaruh orang jahat.
+Baju ini terbuat dari bahan yang mengandung serat daun nanas, serat daun lemba, serat tengang, dan serat nyamu. Kulit nyamu (kulit daun lemba) merupakan kulit tumbuhan pinang puyuh yang banyak ditemukan di ekosistem hutan hujan tropis seperti di Kalimantan. Kulit ini memiliki struktur yang keras dan berserat, sehingga dapat dirajut dan dibentuk layaknya rompi.
+
+                </p>
+            </div>
+          </div>
+          <!--Slide 25-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/kurung tanggung.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Kurung Tanggung</h5>
+              <p class="text-muted">Jambi</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Keunikan Baju Kurung Tanggung terletak pada potongannya yang khas. Baik pria maupun wanita, mengenakan baju kurung dengan lengan tanggung, yaitu lebih dari siku tetapi tidak sampai pergelangan tangan. Ciri khas lainnya adalah motif-motif indah yang menghiasi baju, seperti pucuk rebung, bunga melati, dan bunga tagapo. Tak hanya indah, motif-motif ini juga sarat makna. Pucuk rebung melambangkan kesuburan dan pertumbuhan, bunga melati melambangkan kesucian dan kemurnian, dan bunga tagapo melambangkan kejayaan dan kemakmuran.
+                </p>
+            </div>
+          </div>
+          <!--Slide 26-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/teluk belangga.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Teluk Belanga</h5>
+              <p class="text-muted">Riau</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Baju Teluk Belanga memiliki lengan panjang yang agak menutup pergelangan tangan, dengan potongan yang lebar dan longgar, memberikan kenyamanan bagi pemakainya. Biasanya, baju ini dibuat stelan dengan celana, menggunakan bahan katun atau bahan lain yang berwarna polos. Penampilannya dilengkapi dengan kain samping, seperti kain pelakat, yang menambah kesan tradisional.
+                </p>
+            </div>
+          </div>
+          <!--Slide 27-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/ulee balang.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Ulee Balang</h5>
+              <p class="text-muted">Nanggroe Aceh Darussalam</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Umumnya pakaian adat Ulee Balang hanya dipakai oleh para raja dan keluarga-keluarganya ketika acara sakral atau upacara adat. Pakaian adat untuk laki-laki dikenal dengan sebutan baju Linto Baro. Sedangkan, untuk pakaian adat yang dipakai oleh perempuan disebut dengan istilah Daro Baro. Keunikan dari baju khas Aceh ini terdiri dari beberapa tingkatan yakni tingkatan untuk para raja, ulama dan juga para pejabat kerajaan. 
+                </p>
+            </div>
+          </div>
+          <!--Slide 28-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/babaju kun.jpg" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Babaju Kun Galung Pacinan</h5>
+              <p class="text-muted">Kalimantan Selatan</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                xx
+                </p>
+            </div>
+          </div>
+          <!--Slide 29-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/kebaya jogja.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Kebaya Jawa</h5>
+              <p class="text-muted">Jawa Tengah </p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                xx
+                </p>
+            </div>
+          </div>
+          <!--Slide 30-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/koteka.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Koteka</h5>
+              <p class="text-muted">Papua</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Koteka adalah pakaian untuk menutup kemaluan laki-laki dalam budaya sebagian penduduk asli Pulau Papua. Kata koteka sendiri berasal dari bahasa mee yang berarti pakaian,Koteka terbuat dari kulit labu atau juga bisa terbuat dari moncong burung khawil atau taun-taun
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 31-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/ulos.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Ulos</h5>
+              <p class="text-muted">Sumatera Utara</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Ulos merupakan selendang atau sarung yang digunakan pada upacara adat Batak yang dihiasi benang emas atau perak.  Menurut adat Batak setiap orang minimal menerima tiga ulos dalam hidupnya, saat lahir, menikah, dan meninggal.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 33-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/aesan gede.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Aesen Gede</h5>
+              <p class="text-muted">Sumatera Selatan</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Aesan berarti perhiasan, sementara gde bermakna nenek atau leluhur. Penamaan aesan gede berkaitan dengan julukan Sumatra sebagai Suwarna-dwipa (terj. har. 'pulau emas') Indikasinya terlihat dari beberapa kelengkapan yang dikenakan, yaitu berupa perhiasan bercitrakan keemasan. Pakaian ini termasuk salah satu jenis kain songket yang dahulu sering dipergunakan para kaum bangsawan.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 34-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/kebaya sunda.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Bedahan dan Kebaya Sunda</h5>
+              <p class="text-muted">Jawa Barat</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Bedahan adalah pakaian adat pria Sunda yang terdiri dari baju berkerah tegak (mirip jas tertutup), kain batik sebagai bawahan, sabuk, dan ikat kepala (bendo). Biasanya dipakai dalam acara formal atau adat.</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;"></p>   Kebaya Sunda adalah pakaian adat wanita Sunda yang terdiri dari kebaya (atasan panjang dan pas badan), kain batik atau sinjang sebagai bawahan, serta selendang dan sanggul.</p>
+            </div>
+          </div>
+
+          <!--Slide 35-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/pesaan.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Pesaam</h5>
+              <p class="text-muted">Jawa Timur</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Pakaian adat Madura ini terdiri atas busana wanita dan pria. Bagi para pria terdiri atas celana longgar dan kaos bergaris merah putih yang cukup sederhana. Sedangkan untuk para wanita menggunakan kebaya dengan warna cerah yang mencolok sebagai pasangan dari busana pria.Penggunaan warna yang cerah dan terang yang kuat pada pakaian adat ini mencerminkan karakter masyarakat Madura dikenal akan keberaniannya, sikap tegas, tidak kenal ragu, serta bersikap terbuka dalam menyampaikan isi pikirannya kepada orang lain.
+                </p>
+            </div>
+          </div>
+
+          <!--Slide 36-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/cele.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Baju Cele</h5>
+              <p class="text-muted">Maluku</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Baju ini terbuat dari kain yang keras dan bercorak kotak-kotak kecil berwarna cerah, seperti merah, kuning, atau hijau. Bentuknya sederhana, berlengan panjang, dan dipadukan dengan kain sarung atau kain tenun khas Maluku. Baju Cele melambangkan kesopanan dan kehormatan, serta menunjukkan identitas budaya masyarakat Maluku.
+                </p>
+            </div>
+          </div>
+          <!--Slide 37-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/king.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">King baba dan King Tombak</h5>
+              <p class="text-muted">Kalimantan Barat</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Pakaian ini terdiri dari baju kurung atau baju teluk belanga dengan warna-warna cerah dan hiasan khas, seperti sulaman emas atau motif bunga. Untuk bawahan, mereka mengenakan kain sarung yang dililit di pinggang. Pakaian ini menunjukkan identitas budaya Melayu yang sopan dan rapi. Aksesori seperti songkok atau ikat kepala juga sering dipakai untuk melengkapi penampilan.
+                </p>
+            </div>
+          </div>
+          <!--Slide 38-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/baju bodo.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Baju Bodo</h5>
+              <p class="text-muted">Sulawesi Selatan</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Baju ini berbentuk segi empat dan longgar, terbuat dari kain tipis dan berwarna cerah. Warna baju biasanya menunjukkan usia atau status pemakainya. Baju Bodo sering dipakai saat upacara adat atau acara penting sebagai simbol keanggunan dan budaya Bugis.
+            </div>
+          </div>
+
+          <!--Slide 38-->
+          <div class="carousel-item" id="papua pg">
+            <img src="assets/img/baju adat/encim.png" class="d-block mx-auto img-fluid rounded" alt="Ikan Bakar" style="max-height: 400px;">
+            <div class="mt-3">
+              <h5 class="fw-bold">Baju Koko dan Kebaya Encim</h5>
+              <p class="text-muted">DKI Jakarta</p>
+              <p class="text-muted" style="max-width: 15cm; margin: 0 auto;">
+                Kebaya Encim adalah kebaya khas perempuan Betawi yang terbuat dari bahan tipis dan dihiasi bordir cantik, biasanya dipadukan dengan kain batik. Sementara itu, Sadariah adalah baju tradisional pria Betawi yang bentuknya seperti kemeja lengan panjang dengan kancing di depan, sering dipakai bersama celana batik dan peci. Kedua pakaian ini sering digunakan dalam acara adat atau pertunjukan budaya sebagai simbol identitas orang Betawi.
+                </p>
+            </div>
+          </div>
+
+
+          <!-- Navigasi Carousel -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselMakanan" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Sebelumnya</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselMakanan" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Berikutnya</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+
+  <footer class="text-center py-4 bg-light">
+    <p class="mb-0">&copy; Jejak Nusantara 2025</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.sidebar a').forEach((link) => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const index = parseInt(this.getAttribute('data-slide-to'));
+      const carousel = document.querySelector('#carouselMakanan');
+      const carouselInstance = bootstrap.Carousel.getOrCreateInstance(carousel);
+      carouselInstance.to(index);
+    });
+  });
+</script>
+
+</body>
+</html>
